@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>AR Calculator</h1>
+    <div class="input-group">
+        <label for="h2">H2:</label>
+        <input type="number" id="h2" placeholder="Enter quantity">
+    </div>
+    <!-- Add other input fields for SMG components -->
+    <button class="btn" onclick="calculateAR()">Calculate</button>
+    <div id="ar_summary"></div>
+</div>
+
+<script>
+    function calculateAR() {
+        var h2 = parseInt(document.getElementById('h2').value) || 0;
+
+        // Define material quantities per H2
+        var steel_per_h2 = 165;
+        var metal_per_h2 = 80;
+        var aluminium_per_h2 = 115;
+        var iron_per_h2 = 190;
+        var rubber_per_h2 = 130;
+        var plastic_per_h2 = 160;
+
+        // Calculate total material quantities based on H2 quantity
+        var total_steel = steel_per_h2 * h2;
+        var total_metal = metal_per_h2 * h2;
+        var total_aluminium = aluminium_per_h2 * h2;
+        var total_iron = iron_per_h2 * h2;
+        var total_rubber = rubber_per_h2 * h2;
+        var total_plastic = plastic_per_h2 * h2;
+
+        // Calculate individual material quantities based on H2 quantity
+        var individual_steel = steel_per_h2;
+        var individual_metal = metal_per_h2;
+        var individual_aluminium = aluminium_per_h2;
+        var individual_iron = iron_per_h2;
+        var individual_rubber = rubber_per_h2;
+        var individual_plastic = plastic_per_h2;
+
+        // Calculate total quantity of each component based on H2 quantity
+        var smg_hg = h2;
+        var smg_receiver = h2;
+        var smg_barrel = h2;
+        var smg_stock = h2;
+        var smg_trigger = h2;
+        var smg_grip = h2;
+
+        var ar_summary = "<h2>AR Summary</h2>";
+        ar_summary += "<h3>SMG Components</h3>";
+        ar_summary += "<p>SMG HG: " + smg_hg + " needed</p>";
+        ar_summary += "<p>SMG Receiver: " + smg_receiver + " needed</p>";
+        ar_summary += "<p>SMG Barrel: " + smg_barrel + " needed</p>";
+        ar_summary += "<p>SMG Stock: " + smg_stock + " needed</p>";
+        ar_summary += "<p>SMG Trigger: " + smg_trigger + " needed</p>";
+        ar_summary += "<p>SMG Grip: " + smg_grip + " needed</p>";
+
+        ar_summary += "<h3>Material Calculation per H2</h3>";
+        ar_summary += "<p>Total Steel: " + total_steel + " kg</p>";
+        ar_summary += "<p>Total Metal: " + total_metal + " kg</p>";
+        ar_summary += "<p>Total Aluminium: " + total_aluminium + " kg</p>";
+        ar_summary += "<p>Total Iron: " + total_iron + " kg</p>";
+        ar_summary += "<p>Total Rubber: " + total_rubber + " kg</p>";
+        ar_summary += "<p>Total Plastic: " + total_plastic + " kg</p>";
+
+        document.getElementById('ar_summary').innerHTML = ar_summary;
+    }
+</script>
+
+</body>
+</html>
