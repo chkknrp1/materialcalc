@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        #summary {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Material Calculator</h1>
+    <div class="input-group">
+        <label for="steel">Steel:</label>
+        <input type="number" id="steel" placeholder="Enter quantity of steel">
+    </div>
+    <div class="input-group">
+        <label for="metal_scrap">Metal Scrap:</label>
+        <input type="number" id="metal_scrap" placeholder="Enter quantity of metal scrap">
+    </div>
+    <div class="input-group">
+        <label for="aluminium">Aluminium:</label>
+        <input type="number" id="aluminium" placeholder="Enter quantity of aluminium">
+    </div>
+    <div class="input-group">
+        <label for="plastic">Plastic:</label>
+        <input type="number" id="plastic" placeholder="Enter quantity of plastic">
+    </div>
+    <div class="input-group">
+        <label for="rubber">Rubber:</label>
+        <input type="number" id="rubber" placeholder="Enter quantity of rubber">
+    </div>
+    <div class="input-group">
+        <label for="iron">Iron:</label>
+        <input type="number" id="iron" placeholder="Enter quantity of iron">
+    </div>
+    <div class="input-group">
+        <label for="wood">Wood:</label>
+        <input type="number" id="wood" placeholder="Enter quantity of wood">
+    </div>
+    <div class="input-group">
+        <label for="glass">Glass:</label>
+        <input type="number" id="glass" placeholder="Enter quantity of glass">
+    </div>
+    <button class="btn" onclick="calculate()">Calculate</button>
+    <div id="summary"></div>
+    <a href="ar.html" class="btn">AR</a>
+</div>
+
+<script>
+    function calculate() {
+        var steel = parseInt(document.getElementById('steel').value) || 0;
+        var metal_scrap = parseInt(document.getElementById('metal_scrap').value) || 0;
+        var aluminium = parseInt(document.getElementById('aluminium').value) || 0;
+        var plastic = parseInt(document.getElementById('plastic').value) || 0;
+        var rubber = parseInt(document.getElementById('rubber').value) || 0;
+        var iron = parseInt(document.getElementById('iron').value) || 0;
+        var wood = parseInt(document.getElementById('wood').value) || 0;
+        var glass = parseInt(document.getElementById('glass').value) || 0;
+
+        var total = steel + metal_scrap + aluminium + plastic + rubber + iron + wood + glass;
+
+        var summary = "<h2>Material Summary</h2>";
+        summary += "<p>Steel: " + steel + "</p>";
+        summary += "<p>Metal Scrap: " + metal_scrap + "</p>";
+        summary += "<p>Aluminium: " + aluminium + "</p>";
+        summary += "<p>Plastic: " + plastic + "</p>";
+        summary += "<p>Rubber: " + rubber + "</p>";
+        summary += "<p>Iron: " + iron + "</p>";
+        summary += "<p>Wood: " + wood + "</p>";
+        summary += "<p>Glass: " + glass + "</p>";
+        summary += "<p>Total materials: " + total + "</p>";
+
+        document.getElementById('summary').innerHTML = summary;
+    }
+</script>
+
+</body>
+</html>
